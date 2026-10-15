@@ -13,7 +13,7 @@ flowchart TD
     IncrInputRow@{ shape: rect, label: "inputRow++" }
     EmptyRowControl@{ shape: decision, label: "inputs[inputRow].length === 0" }
     WarnAndSkipEmptyRow@{ shape: lean-r, label: "#quot;This array has no number! Skipping...#quot;" }
-    InitRowOfNums@{ shape: rect, label: "nums = inputs[inputRow] "}
+    InitRowOfNums@{ shape: rect, label: "nums = [...inputs[inputRow]] "}
     InitMax@{ shape: rect, label: "max = nums[0]" }
     InitMin@{ shape: rect, label: "min = nums[0]" }
     InitSum@{ shape: rect, label: "sum = 0" }

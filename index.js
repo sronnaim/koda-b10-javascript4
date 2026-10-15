@@ -21,7 +21,7 @@ for(let inputRow = 0; inputRow < inputs.length; inputRow++) {
         continue
     }
 
-    const nums = inputs[inputRow]
+    const nums = [...inputs[inputRow]]
     let max = nums[0]
     let min = nums[0]
     let sum = 0
