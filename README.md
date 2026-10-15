@@ -11,7 +11,7 @@ flowchart TD
     InputRowInit@{ shape: rect, label: "inputRow = 0" }
     InputRowControl@{ shape: decision, label: "inputRow < inputs.length" }
     IncrInputRow@{ shape: rect, label: "inputRow++" }
-    InitRowOfNums@{ shape: rect, label: "nums = input[inputRow] "}
+    InitRowOfNums@{ shape: rect, label: "nums = inputs[inputRow] "}
     InitMax@{ shape: rect, label: "max = nums[0]" }
     InitMin@{ shape: rect, label: "min = nums[0]" }
     InitSum@{ shape: rect, label: "sum = 0" }
