@@ -5,8 +5,8 @@ const inputs = [
     [10, 20]
 ]
 
-inputs.forEach((a) => {
-    const nums = a
+for(let inputRow = 0; inputRow < inputs.length; inputRow++) {
+    const nums = inputs[inputRow]
     let max = nums[0]
     let min = nums[0]
     let sum = 0
@@ -26,4 +26,4 @@ inputs.forEach((a) => {
     console.log(max)
     console.log(min)
     console.log(sum / length)
-})
+}

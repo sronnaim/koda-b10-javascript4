@@ -7,7 +7,11 @@
 ```mermaid
 flowchart TD
     Start@{ shape: start }
-    InputNums@{ shape: lean-r, label: "nums as array" }
+    InputArrayOfNums@{ shape: lean-r, label: "inputs as an array of arrays of numbers" }
+    InputRowInit@{ shape: rect, label: "inputRow = 0" }
+    InputRowControl@{ shape: decision, label: "inputRow < inputs.length" }
+    IncrInputRow@{ shape: rect, label: "inputRow++" }
+    InitRowOfNums@{ shape: rect, label: "nums = input[inputRow] "}
     InitMax@{ shape: rect, label: "max = nums[0]" }
     InitMin@{ shape: rect, label: "min = nums[0]" }
     InitSum@{ shape: rect, label: "sum = 0" }
@@ -25,7 +29,12 @@ flowchart TD
     OutputAvg@{ shape: lean-r, label: "sum / length" }
     End@{ shape: stop }
 
-    Start --> InputNums --> InitMax --> InitMin --> InitSum --> InitLength --> InitRow --> RowControl
+    Start --> InputArrayOfNums --> InputRowInit --> InputRowControl
+
+    InputRowControl --true--> InitRowOfNums
+    InputRowControl --false--> End
+
+    InitRowOfNums --> InitMax --> InitMin --> InitSum --> InitLength --> InitRow --> RowControl
 
     RowControl --true--> MaxControl
 
@@ -37,5 +46,7 @@ flowchart TD
 
     AddToSum --> IncrRow --> RowControl
 
-    RowControl --false--> OutputMax --> OutputMin --> OutputAvg --> End
+    RowControl --false--> OutputMax --> OutputMin --> OutputAvg
+
+    OutputAvg --> IncrInputRow --> InputRowControl
 ```
