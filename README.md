@@ -26,9 +26,9 @@ flowchart TD
     ChangeMin@{ shape: rect, label: "min = nums[row]"}
     AddToSum@{ shape: rect, label: "sum += nums[row]" }
     IncrRow@{ shape: rect, label: "row++" }
-    OutputMax@{ shape: lean-r, label: "max" }
-    OutputMin@{ shape: lean-r, label: "min" }
-    OutputAvg@{ shape: lean-r, label: "sum / length" }
+    OutputMax@{ shape: lean-r, label: "#quot;Max: #quot;, max" }
+    OutputMin@{ shape: lean-r, label: "#quot;Min: #quot;, min" }
+    OutputAvg@{ shape: lean-r, label: "#quot;Avg: #quot;, sum / length" }
     End@{ shape: stop }
 
     Start --> InputArrayOfNums --> InputRowInit --> InputRowControl

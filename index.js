@@ -38,7 +38,7 @@ for(let inputRow = 0; inputRow < inputs.length; inputRow++) {
         sum += nums[row]
     }
 
-    console.log(max)
-    console.log(min)
-    console.log(sum / length)
+    console.log("Max: ", max)
+    console.log("Min: ", min)
+    console.log("Avg: ", sum / length)
 }
