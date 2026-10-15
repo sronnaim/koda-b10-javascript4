@@ -2,7 +2,7 @@
 
 ## Program untuk menghitung Max, Min, Average
 
-### Flowchart 
+### Flowchart
 
 ```mermaid
 flowchart TD
@@ -11,6 +11,8 @@ flowchart TD
     InputRowInit@{ shape: rect, label: "inputRow = 0" }
     InputRowControl@{ shape: decision, label: "inputRow < inputs.length" }
     IncrInputRow@{ shape: rect, label: "inputRow++" }
+    EmptyRowControl@{ shape: decision, label: "inputs[inputRow].length === 0" }
+    WarnAndSkipEmptyRow@{ shape: lean-r, label: "#quot;This array has no number! Skipping...#quot;" }
     InitRowOfNums@{ shape: rect, label: "nums = inputs[inputRow] "}
     InitMax@{ shape: rect, label: "max = nums[0]" }
     InitMin@{ shape: rect, label: "min = nums[0]" }
@@ -31,7 +33,10 @@ flowchart TD
 
     Start --> InputArrayOfNums --> InputRowInit --> InputRowControl
 
-    InputRowControl --true--> InitRowOfNums
+    InputRowControl --true--> EmptyRowControl
+    EmptyRowControl --false--> InitRowOfNums
+    EmptyRowControl --true--> WarnAndSkipEmptyRow --> IncrInputRow
+
     InputRowControl --false--> End
 
     InitRowOfNums --> InitMax --> InitMin --> InitSum --> InitLength --> InitRow --> RowControl

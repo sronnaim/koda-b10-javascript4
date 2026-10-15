@@ -2,10 +2,25 @@ const inputs = [
     [1, 2, 3, 4, 5],
     [5, 4, 3, 2, 1],
     [3, 1, 4, 1, 5, 9, 2, 6],
-    [10, 20]
+    [10, 20],
+    // Edge cases
+    [5],
+    [7, 7, 7],
+    [0, 0, 0],
+    [-5, -1, -10],
+    [-3, 0, 3],
+    [100, -100],
+    [1.5, 2.5, 3.5],
+    [],
+    [67]
 ]
 
 for(let inputRow = 0; inputRow < inputs.length; inputRow++) {
+    if (inputs[inputRow].length === 0) {
+        console.log("This array has no number! Skipping...")
+        continue
+    }
+
     const nums = inputs[inputRow]
     let max = nums[0]
     let min = nums[0]
